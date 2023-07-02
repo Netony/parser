@@ -1,3 +1,15 @@
+int	token_add(t_list **token, const char *tok)
+{
+	t_list	*new;
+
+	new = ft_lstnew(tok);
+	if (new == NULL)
+		return (-1);
+	ft_lstadd_back(token, new);
+	return (0);	
+}
+
+
 /*
 t_list	*get_token(const char **s, const char *set)
 {

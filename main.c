@@ -10,7 +10,7 @@ int	main(void)
 {
 	const char	*a;
 
-	a = "He\\3llo";
+	a = "He\\\\llo";
 	printf("%s\n", tokenize(&a, "\\"));
 	printf("%s\n", tokenize(&a, "\\"));
 	printf("%s\n", tokenize(&a, "\\"));
