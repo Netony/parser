@@ -1,17 +1,3 @@
-t_list	*parser(const char *s, const char *spec)
-{
-	t_list	*lst;
-	t_list	*new;
-
-	lst = NULL;
-	while (*s)
-	{
-		new = parse_get(s, spec);
-		if (new == NULL)
-			ft_lstclear(lst, free);
-	}
-	return (0);
-}
 
 t_list	*parse_get(const char **s, const char *spec)
 {
@@ -63,3 +49,19 @@ int	ft_repeat_len(const char *s, const char *set)
 {
 	return (ft_isinlen(s, set, 0));
 }
+
+char	*tokenize(const char **s, const char *set)
+{
+	static const char	*last;
+	char				*token;
+
+	if (s == NULL)
+		s = last;
+	if (s == NULL)
+		return (NULL);
+	if (ft_isin(*s, set))
+		token = ft_strtok(s, set);
+	else
+		token = ft_strget(s, set);
+}
+
