@@ -1,18 +1,12 @@
+#include "libft.h"
 #include <stdio.h>
 #include <string.h> 
 
-char	*tokenize(const char **s, const char *set);
-// char	*escape(const char **s);
-// char	*dquote(const char **s, const char *set);
-
+char	*parse(const char **s, const char *set);
 
 int	main(void)
 {
-	const char	*a;
+	const char	*s = "Hello My friends, I think it \\will be good";
 
-	a = "He\\\\llo";
-	printf("%s\n", tokenize(&a, "\\"));
-	printf("%s\n", tokenize(&a, "\\"));
-	printf("%s\n", tokenize(&a, "\\"));
+	printf("%s\n", parse(&s, "\\"));
 }
-
