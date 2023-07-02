@@ -1,23 +1,37 @@
+/*
+t_list	*get_token(const char **s, const char *set)
+{
+	
+}
+
+char	*dq_gettok(const char *s, const char *set);
+int		ft_stridx(const char *s, char c);
+int		ft_duplen(const char *s, const char *set);
+
 char	*dquote(const char **s, const char *set)
 {
 	int		len;
 	char	*do_quote;
 
 	(*s)++;
-	len = ft_stridx(*s, '"');
+	if (*s == NULL)
+		return (NULL);
+	len = ft_toklen(*s, '"');
 	if (len < 0)
 		return (NULL); // parse error
-	ft_strget(s, do_quote);
+	dq_gettok(*s, set);
 }
 
-char	*do_dquote(const char *s, const char *set)
+char	*dq_tokenize(const char *s, const char *set)
 {
-	char	*str;
-	char	*ret;
+	const char	*content;
+	char		*tok;
+	int			len;
 
-	str = ft_substr(*s, 0, len - 1);
-	if (do_quote == NULL)
+	len = ft_toklen(s, "\"");
+	content = ft_substr(*s, 0, len);
+	if (content == NULL)
 		return (NULL);
-	ft_strget(str);
+	tokenize(&content, set);
 }
-
+*/

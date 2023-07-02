@@ -50,18 +50,3 @@ int	ft_repeat_len(const char *s, const char *set)
 	return (ft_isinlen(s, set, 0));
 }
 
-char	*tokenize(const char **s, const char *set)
-{
-	static const char	*last;
-	char				*token;
-
-	if (s == NULL)
-		s = last;
-	if (s == NULL)
-		return (NULL);
-	if (ft_isin(*s, set))
-		token = ft_strtok(s, set);
-	else
-		token = ft_strget(s, set);
-}
-

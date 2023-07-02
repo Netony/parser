@@ -1,5 +1,5 @@
 NAME = fdf
-SOURCES = main.c
+SOURCES = main.c ft_strtok.c escape.c tokenize.c spec.c
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(SOURCES:.c=.o))
 SRCS = $(addprefix $(SRC_DIR)/, $(SOURCES))
@@ -9,7 +9,7 @@ OBJ_DIR = objs
 LIBFLAGS = -L libft -l ft
 
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -I ../libft/incs
 all : $(NAME)
 
 fclean : 

@@ -1,29 +1,18 @@
-#include "../libft/incs/libft.h"
 #include <stdio.h>
+#include <string.h> 
 
-typedef char *(*	t_spec)(const char *s);
+char	*tokenize(const char **s, const char *set);
+// char	*escape(const char **s);
+// char	*dquote(const char **s, const char *set);
+
 
 int	main(void)
 {
-	const t_fp	fp[2] = {sum, sub};
-	int			a;
-	int			b;
+	const char	*a;
 
-	a = 5;
-	b = 2;
-	printf("sum(%d, %d): %d\n", a, b, fp[0](a, b));
-	return (0);
+	a = "He\\3llo";
+	printf("%s\n", tokenize(&a, "\\"));
+	printf("%s\n", tokenize(&a, "\\"));
+	printf("%s\n", tokenize(&a, "\\"));
 }
 
-char	*ft_strget(const char *s, const char *set)
-{
-	const char		spec[2] = "\\";
-	const t_spec	spec_ft[2] = {escape, quote};
-	int				idx;
-	char			*strget;
-
-	idx = ft_stridx(*s, set);
-	if (idx == -1)
-		return (NULL);
-	return (spec_ft[idx]);
-}
