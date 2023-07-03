@@ -24,7 +24,7 @@ char	*parse(const char **s, const char *set)
 	int		res;
 	
 	toklst = NULL;
-	while (*s)
+	while (**s)
 	{
 		tok = tokenize(s, set);
 		if (tok == NULL)
@@ -33,6 +33,7 @@ char	*parse(const char **s, const char *set)
 		if (res < 0)
 			break ;
 	}
+	if (tok == NULL || res < 0);
 	parse = ft_lstjoin(toklst);
 	ft_lstclear(&toklst, free);
 	return (parse);

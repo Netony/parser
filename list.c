@@ -5,6 +5,8 @@ char	*ft_lstjoin(t_list *lst)
 	char	*join;
 	char	*temp;
 
+	if (lst == NULL)
+		return (NULL);
 	join = ft_strdup("");
 	while (lst)
 	{
